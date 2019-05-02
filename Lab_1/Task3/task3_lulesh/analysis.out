@@ -1,0 +1,74 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+ no time accumulated
+
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+  0.00      0.00     0.00   833421     0.00     0.00  frame_dummy
+  0.00      0.00     0.00   216000     0.00     0.00  CalcElemVolume(double const*, double const*, double const*)
+  0.00      0.00     0.00       13     0.00     0.00  std::vector<double, std::allocator<double> >::_M_fill_insert(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, unsigned long, double const&)
+  0.00      0.00     0.00       11     0.00     0.00  std::vector<int, std::allocator<int> >::_M_fill_insert(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, unsigned long, int const&)
+  0.00      0.00     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z14CalcElemVolumePKdS0_S0_
+  0.00      0.00     0.00        1     0.00     0.00  Domain::SetupCommBuffers(int)
+  0.00      0.00     0.00        1     0.00     0.00  Domain::CreateRegionIndexSets(int, int)
+  0.00      0.00     0.00        1     0.00     0.00  Domain::AllocateElemPersistent(int)
+  0.00      0.00     0.00        1     0.00     0.00  Domain::SetupBoundaryConditions(int)
+  0.00      0.00     0.00        1     0.00     0.00  Domain::SetupElementConnectivities(int)
+  0.00      0.00     0.00        1     0.00     0.00  Domain::SetupThreadSupportStructures()
+  0.00      0.00     0.00        1     0.00     0.00  Domain::BuildMesh(int, int, int)
+
+			Call graph
+
+
+granularity: each sample hit covers 2 byte(s) no time propagated
+
+index % time    self  children    called     name
+                0.00    0.00  833421/833421      EvalEOSForElems(Domain&, double*, int, int*, int) [25]
+[1]      0.0    0.00    0.00  833421         frame_dummy [1]
+-----------------------------------------------
+                             219745409             CalcElemVolume(double const*, double const*, double const*) [8]
+                0.00    0.00  216000/216000      Domain::Domain(int, int, int, int, int, int, int, int, int) [27]
+[8]      0.0    0.00    0.00  216000+219745409 CalcElemVolume(double const*, double const*, double const*) [8]
+                             219745409             CalcElemVolume(double const*, double const*, double const*) [8]
+-----------------------------------------------
+                0.00    0.00      13/13          Domain::Domain(int, int, int, int, int, int, int, int, int) [27]
+[9]      0.0    0.00    0.00      13         std::vector<double, std::allocator<double> >::_M_fill_insert(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, unsigned long, double const&) [9]
+-----------------------------------------------
+                0.00    0.00       3/11          Domain::SetupCommBuffers(int) [12]
+                0.00    0.00       8/11          Domain::AllocateElemPersistent(int) [14]
+[10]     0.0    0.00    0.00      11         std::vector<int, std::allocator<int> >::_M_fill_insert(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, unsigned long, int const&) [10]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [33]
+[11]     0.0    0.00    0.00       1         _GLOBAL__sub_I__Z14CalcElemVolumePKdS0_S0_ [11]
+-----------------------------------------------
+                0.00    0.00       1/1           Domain::Domain(int, int, int, int, int, int, int, int, int) [27]
+[12]     0.0    0.00    0.00       1         Domain::SetupCommBuffers(int) [12]
+                0.00    0.00       3/11          std::vector<int, std::allocator<int> >::_M_fill_insert(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, unsigned long, int const&) [10]
+-----------------------------------------------
+                0.00    0.00       1/1           Domain::Domain(int, int, int, int, int, int, int, int, int) [27]
+[13]     0.0    0.00    0.00       1         Domain::CreateRegionIndexSets(int, int) [13]
+-----------------------------------------------
+                0.00    0.00       1/1           Domain::Domain(int, int, int, int, int, int, int, int, int) [27]
+[14]     0.0    0.00    0.00       1         Domain::AllocateElemPersistent(int) [14]
+                0.00    0.00       8/11          std::vector<int, std::allocator<int> >::_M_fill_insert(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, unsigned long, int const&) [10]
+-----------------------------------------------
+                0.00    0.00       1/1           Domain::Domain(int, int, int, int, int, int, int, int, int) [27]
+[15]     0.0    0.00    0.00       1         Domain::SetupBoundaryConditions(int) [15]
+-----------------------------------------------
+                0.00    0.00       1/1           Domain::Domain(int, int, int, int, int, int, int, int, int) [27]
+[16]     0.0    0.00    0.00       1         Domain::SetupElementConnectivities(int) [16]
+-----------------------------------------------
+                0.00    0.00       1/1           Domain::Domain(int, int, int, int, int, int, int, int, int) [27]
+[17]     0.0    0.00    0.00       1         Domain::SetupThreadSupportStructures() [17]
+-----------------------------------------------
+                0.00    0.00       1/1           Domain::Domain(int, int, int, int, int, int, int, int, int) [27]
+[18]     0.0    0.00    0.00       1         Domain::BuildMesh(int, int, int) [18]
+-----------------------------------------------
+
+Index by function name
+
+  [11] _GLOBAL__sub_I__Z14CalcElemVolumePKdS0_S0_ (lulesh.cc) [14] Domain::AllocateElemPersistent(int) [18] Domain::BuildMesh(int, int, int)
+   [8] CalcElemVolume(double const*, double const*, double const*) [15] Domain::SetupBoundaryConditions(int) [9] std::vector<double, std::allocator<double> >::_M_fill_insert(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, unsigned long, double const&)
+  [12] Domain::SetupCommBuffers(int) [16] Domain::SetupElementConnectivities(int) [10] std::vector<int, std::allocator<int> >::_M_fill_insert(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, unsigned long, int const&)
+  [13] Domain::CreateRegionIndexSets(int, int) [17] Domain::SetupThreadSupportStructures() [1] frame_dummy
