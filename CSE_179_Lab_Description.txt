@@ -14,7 +14,11 @@ OpenMP
 		1: Parallelization of matrix vector multiplication
 		2: Producer/consumer 
 		3: Linked list
-
+	Lab_10:
+		1: Generate a random graph (JAVA)
+		2: Implementation of a serial Prim’s algorithm
+		3: Parallelize the serial Prim’s algorithm with OpenMP 
+		
 Pthreads
 	Lab_4: 
 		1: Monte Carlo Estimation of PI
